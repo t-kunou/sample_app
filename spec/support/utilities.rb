@@ -12,6 +12,7 @@ def sign_in(user, options={})
     cookies[:remenber_token] = rembner_token
     user.update_attribute(:remenber_token, User.encrypt(remenber_token))
   else
+    visit signin_path
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
     click_button "Sign in"
