@@ -9,7 +9,7 @@ end
 def sign_in(user, options={})
   if options[:no_capybara]
     remenber_token = User.new_remenber_token
-    cookies[:remenber_token] = rembner_token
+    cookies[:remenber_token] = remenber_token
     user.update_attribute(:remenber_token, User.encrypt(remenber_token))
   else
     visit signin_path
