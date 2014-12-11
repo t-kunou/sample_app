@@ -23,7 +23,7 @@ describe "Authentication" do
 
       describe "after visitiong another page" do
         before { click_link "Home" }
-        it { should_not have_selector('div.alert.alert-error') }
+        it { should_not have_not_error_message('div.alert.alert-error') }
       end
     end
 
